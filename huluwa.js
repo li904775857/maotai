@@ -23,14 +23,14 @@ const crypto = require('crypto');
 const moment = require('moment');
 const notify = require('./sendNotify');
 
-const XLTH_APPID = 'wxded2e7e6d60ac09d'; // 新联惠购
-const GLYP_APPID = 'wx61549642d715f361'; // 贵旅优品
-const KGLG_APPID = 'wx613ba8ea6a002aa8'; // 空港乐购
-const HLQG_APPID = 'wx936aa5357931e226'; // 航旅黔购
-const ZHCS_APPID = 'wx624149b74233c99a'; // 遵航出山
-const GYQP_APPID = 'wx5508e31ffe9366b8'; // 贵盐黔品
-const LLSC_APPID = 'wx821fb4d8604ed4d6'; // 乐旅商城
-const YLQX_APPID = 'wxee0ce83ab4b26f9c'; // 驿路黔寻
+const XLTH_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE4Nzk4ODUxIiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzMywiaWF0IjoxNzEwMTU1NjMzfQ.o6mK3x-DWn8mKjKkO99FljEjvwhOyF50p61FtuF6Mio'; // 新联惠购
+const GLYP_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE5MDI2NjQ2IiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzOCwiaWF0IjoxNzEwMTU1NjM4fQ.kHYoMDj9V_eHtK2hvjwTRWSUtN42y3KjMrKq2DeNDig'; // 贵旅优品
+const KGLG_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE4Nzk4ODk1IiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzNywiaWF0IjoxNzEwMTU1NjM3fQ.vVu2Uxr0shiWbXlw-pUomaFmbQciZ6LQUe8r7CH_hLY'; // 空港乐购
+const HLQG_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE5MTIwMDgzIiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzNSwiaWF0IjoxNzEwMTU1NjM1fQ.pHjp5BpAZUSG_gWzqWbOODG-ibCxy-LWj09HZmL4ZgQ'; // 航旅黔购
+const ZHCS_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDE5NzE2MTIzIiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzNiwiaWF0IjoxNzEwMTU1NjM2fQ.Cvnhzowup-NGmnrns3pG5qG-4SKEfs7DYpyjuHoLX-Q'; // 遵航出山
+const GYQP_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDE5NzExMTQ5IiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzNCwiaWF0IjoxNzEwMTU1NjM0fQ.2B94gZW6pCdJD2sT7uhE2RgdQiulptjBkGLwf646uWM'; // 贵盐黔品
+const LLSC_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE4Nzk4ODM5IiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzMiwiaWF0IjoxNzEwMTU1NjMyfQ.iM7xUcj299GPQda0RFfW51WbXhgYo-8vf9zJ4xbnaMQ'; // 乐旅商城
+const YLQX_APPID = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMTE5MDI2NjYzIiwiaXNzIjoiZ21hbGwtc3RhcnNreSIsImxvZ0lkIjoibnVsbCIsImV4cCI6MTcxNzkzMTYzOCwiaWF0IjoxNzEwMTU1NjM4fQ.I7eVWowFdNGlUN6Ue0v5__1R-LTsCknQxiDKDe64N88'; // 驿路黔寻
 
 const HOST = 'https://gw.huiqunchina.com';
 const AK = '00670fb03584fbf44dd6b136e534f495';
